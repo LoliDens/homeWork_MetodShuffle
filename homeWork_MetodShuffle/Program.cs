@@ -32,19 +32,16 @@ namespace homeWork_MetodShuffle
         {
             Random random = new Random();
             string[] result = array;
+            string temporeryElement = "";
 
-            for (int d = 0; d < array.Length; d++)
+            for (int i = 0; i < array.Length; i++)
             {
-
-                for (int i = 0; i < array.Length; i++)
-                {
-                    int j = random.Next(i + 1);
-                    string temporery = result[j];
-                    result[j] = result[i];
-                    result[i] = temporery;
-                }
+                int j = random.Next(array.Length);
+                temporeryElement = result[j];
+                result[j] = result[i];
+                result[i] = temporeryElement;
             }
-
+           
             return result;
         }
     }
