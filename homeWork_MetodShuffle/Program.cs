@@ -14,7 +14,7 @@ namespace homeWork_MetodShuffle
             Console.Write("Изначальный массив: ");
             PrintArray(numbers);
 
-            numbers = ShuffleArray(numbers);
+            ShuffleArray(numbers);
             Console.Write("\nПеремешаный массив: ");
             PrintArray(numbers);
             Console.ReadKey();
@@ -28,21 +28,18 @@ namespace homeWork_MetodShuffle
             }           
         }
 
-        static string[] ShuffleArray(string[] array) 
+        static void ShuffleArray(string[] array) 
         {
             Random random = new Random();
-            string[] result = array;
             string temporeryElement = "";
 
             for (int i = 0; i < array.Length; i++)
             {
-                int j = random.Next(array.Length);
-                temporeryElement = result[j];
-                result[j] = result[i];
-                result[i] = temporeryElement;
-            }
-           
-            return result;
+                int randomElemet = random.Next(array.Length);
+                temporeryElement = array[randomElemet];
+                array[randomElemet] = array[i];
+                array[i] = temporeryElement;
+            }              
         }
     }
 }
