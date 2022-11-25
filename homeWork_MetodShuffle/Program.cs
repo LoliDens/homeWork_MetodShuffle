@@ -35,9 +35,9 @@ namespace homeWork_MetodShuffle
 
             for (int i = 0; i < array.Length; i++)
             {
-                int randomElemet = random.Next(array.Length);
-                temporeryElement = array[randomElemet];
-                array[randomElemet] = array[i];
+                int randomIndex = random.Next(array.Length);
+                temporeryElement = array[randomIndex];
+                array[randomIndex] = array[i];
                 array[i] = temporeryElement;
             }              
         }
